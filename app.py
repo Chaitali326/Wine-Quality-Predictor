@@ -88,15 +88,10 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-
-
 # ---- Title Section ----
 st.markdown("<div class='main-card'>", unsafe_allow_html=True)
-st.title("🍷 Wine Quality Prediction App")
-st.markdown("""
-Predict whether a wine is **Good** or **Bad** based on its chemical properties.  
-Use the **Next** or **Prev** buttons to switch between wines or adjust values manually.
-""")
+st.markdown("<h1 style='text-align:center;'>🍷 Wine Quality Predictor</h1>", unsafe_allow_html=True)
+st.markdown("<h4 style='text-align:center;'>Adjust the Values Below</h4>", unsafe_allow_html=True)
 
 # ---- Features and Example Cases ----
 features = [
@@ -130,7 +125,7 @@ example_cases = [
 if "case_index" not in st.session_state:
     st.session_state.case_index = 0
 
-col1, col2, col3 = st.columns([1, 2, 1])
+col1, col2, col3 = st.columns([1, 4, 1])
 with col1:
     if st.button("Previous"):
         st.session_state.case_index = (st.session_state.case_index - 1) % len(example_cases)
